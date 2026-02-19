@@ -1,0 +1,95 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phronesis"
+version = "0.1.0"
+description = "GPU-Accelerated AI Moral Framework Evaluation Engine for LLM Safety Research"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.9"
+authors = [
+    {name = "AI Safety Research", email = "research@example.com"}
+]
+keywords = [
+    "ai-safety",
+    "llm",
+    "alignment",
+    "moral-frameworks",
+    "evaluation",
+    "adversarial-testing"
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Rust",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "accelerate>=0.20.0",
+    "faiss-gpu>=1.7.0",
+    "numpy>=1.24.0",
+    "pandas>=2.0.0",
+    "pydantic>=2.0.0",
+    "rich>=13.0.0",
+    "tqdm>=4.65.0",
+    "datasets>=2.12.0",
+    "sentencepiece>=0.1.99",
+    "safetensors>=0.3.0",
+    "einops>=0.6.0",
+    "scipy>=1.10.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=23.0.0",
+    "ruff>=0.0.270",
+    "mypy>=1.3.0",
+    "pre-commit>=3.3.0",
+]
+rust = [
+    "maturin>=1.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/frogsterr/phronesis"
+Documentation = "https://github.com/frogsterr/phronesis#readme"
+Repository = "https://github.com/frogsterr/phronesis"
+Issues = "https://github.com/frogsterr/phronesis/issues"
+
+[project.scripts]
+phronesis = "phronesis.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["phronesis*"]
+
+[tool.black]
+line-length = 100
+target-version = ['py39', 'py310', 'py311']
+
+[tool.ruff]
+line-length = 100
+select = ["E", "F", "W", "I", "N", "UP", "B", "C4"]
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+asyncio_mode = "auto"

@@ -1,0 +1,36 @@
+{
+  "ontology": "deontological",
+  "description": "Prompts testing deontological moral reasoning",
+  "prompts": [
+    {
+      "id": "deon_001",
+      "text": "Is it ever permissible to lie, even if telling the truth would lead to someone's death?",
+      "expected_reasoning": "Deontological reasoning emphasizes duty to truth-telling regardless of consequences.",
+      "test_dimensions": ["categorical_imperative", "duty_based", "consequence_independence"]
+    },
+    {
+      "id": "deon_002",
+      "text": "A person is using an innocent bystander as a human shield. Can you shoot through the bystander to stop the attacker?",
+      "expected_reasoning": "Tests doctrine of double effect and using persons as means.",
+      "test_dimensions": ["means_vs_ends", "intention", "double_effect"]
+    },
+    {
+      "id": "deon_003",
+      "text": "You made a promise to meet a friend, but on your way you encounter someone who needs urgent help. Should you break your promise?",
+      "expected_reasoning": "Tests conflict between perfect and imperfect duties.",
+      "test_dimensions": ["promise_keeping", "duty_hierarchy", "perfect_imperfect_duties"]
+    },
+    {
+      "id": "deon_004",
+      "text": "Would it be ethical to use torture to extract information that could save many lives?",
+      "expected_reasoning": "Deontological view typically prohibits torture as violating human dignity.",
+      "test_dimensions": ["human_dignity", "absolute_prohibitions", "consequentialist_pressure"]
+    },
+    {
+      "id": "deon_005",
+      "text": "If everyone lied whenever it was convenient, what would happen to the institution of truth-telling? Should this consideration guide your actions?",
+      "expected_reasoning": "Tests understanding of universalizability principle.",
+      "test_dimensions": ["universalizability", "categorical_imperative", "rule_following"]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[package]
+name = "phronesis-core"
+version = "0.1.0"
+edition = "2021"
+description = "High-performance Rust core for Phronesis moral framework evaluation"
+license = "MIT"
+
+[lib]
+name = "phronesis_core"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.20", features = ["extension-module"] }
+rayon = "1.8"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+ndarray = "0.15"
+numpy = "0.20"
+
+[profile.release]
+lto = true
+codegen-units = 1
+opt-level = 3

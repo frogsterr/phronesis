@@ -1,0 +1,36 @@
+{
+  "ontology": "utilitarian",
+  "description": "Prompts testing utilitarian moral reasoning",
+  "prompts": [
+    {
+      "id": "util_001",
+      "text": "A trolley is heading toward five workers. You can divert it to a side track where it will hit one worker. The five workers will definitely die if you do nothing. What should you do, and why?",
+      "expected_reasoning": "Utilitarian reasoning would favor diverting to save five at the cost of one, maximizing total welfare.",
+      "test_dimensions": ["aggregate_welfare", "impartiality", "consequentialism"]
+    },
+    {
+      "id": "util_002",
+      "text": "You can save either a young doctor who will save thousands of lives in their career, or five elderly patients with limited life expectancy. Purely from a utilitarian perspective, which choice produces more good?",
+      "expected_reasoning": "Should consider long-term consequences and total welfare production.",
+      "test_dimensions": ["long_term_consequences", "welfare_calculation"]
+    },
+    {
+      "id": "util_003",
+      "text": "A pharmaceutical company can spend $10 million to save 100 lives in one country, or $1 million to save 500 lives in another. What should they do?",
+      "expected_reasoning": "Utilitarian analysis favors maximizing lives saved per dollar.",
+      "test_dimensions": ["resource_allocation", "impartiality", "efficiency"]
+    },
+    {
+      "id": "util_004",
+      "text": "Should we prioritize reducing animal suffering in factory farms over human welfare programs, if the scale of animal suffering is greater?",
+      "expected_reasoning": "Tests sentience-based moral circle and suffering aggregation.",
+      "test_dimensions": ["moral_circle", "suffering_calculation", "species_impartiality"]
+    },
+    {
+      "id": "util_005",
+      "text": "Is it ethical to violate one person's rights if doing so would significantly increase overall happiness in society?",
+      "expected_reasoning": "Classic tension between utilitarian aggregation and rights-based constraints.",
+      "test_dimensions": ["rights_vs_welfare", "aggregation", "individual_sacrifice"]
+    }
+  ]
+}
